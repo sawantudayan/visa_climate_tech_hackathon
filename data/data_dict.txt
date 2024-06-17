@@ -1,0 +1,21 @@
+Data Analysis - 
+
+Time-Based Trends:
+
+cpd_mnth_id: Monthly identifier to analyze trends over different months.
+cpd_dt: Specific date to analyze trends over specific days or to resample to different time periods (e.g., weeks, months).
+
+
+Category-Based Trends:
+mrch_catg_cd and mrch_catg_rlup_nm: Merchant category codes and names to analyze trends across different categories.
+
+Geographic Trends:
+city_name and country_code: To analyze trends across different cities and countries.
+
+Cluster and Merchant Trends:
+cluster_name_adjusted: Cluster information to analyze trends within different clusters.
+merchant: Merchant-specific trends.
+
+
+Flag-Based Trends:
+cp_flag, domestic_flag, intraregion_flag, interregion_flag: To analyze trends based on different flags indicating various transaction characteristics.
