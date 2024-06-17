@@ -44,3 +44,21 @@ cp_flag_trends = df.groupby('cp_flag').size().reset_index(name='Transaction_Coun
 domestic_flag_trends = df.groupby('domestic_flag').size().reset_index(name='Transaction_Count')
 intraregion_flag_trends = df.groupby('intraregion_flag').size().reset_index(name='Transaction_Count')
 interregion_flag_trends = df.groupby('interregion_flag').size().reset_index(name='Transaction_Count')
+
+
+
+# Plot monthly trends
+plt.figure(figsize=(10, 6))
+sns.lineplot(x='cpd_mnth_id', y='Transaction_Count', data=monthly_trends)
+plt.title('Monthly Transaction Trends')
+plt.xlabel('Month')
+plt.ylabel('Transaction Count')
+plt.show()
+
+# Plot daily trends
+plt.figure(figsize=(10, 6))
+sns.lineplot(x='cpd_dt', y='Transaction_Count', data=daily_trends)
+plt.title('Daily Transaction Trends')
+plt.xlabel('Date')
+plt.ylabel('Transaction Count')
+plt.show()
