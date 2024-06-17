@@ -20,24 +20,27 @@ df['cpd_dt'] = pd.to_datetime(df['cpd_dt'])
 
 # Time-Based Trends : Monthly & Daily Trends
 monthly_trends = df.groupby('cpd_mnth_id').size().reset_index(name='Transaction_Count')
-
 daily_trends = df.groupby('cpd_dt').size().reset_index(name='Transaction_Count')
 
 
 
 # Category-Based Trends - Merchant Category Code, Name
 category_trends_code = df.groupby('mrch_catg_cd').size().reset_index(name='Transaction_Count')
-
 category_trends_name = df.groupby('mrch_catg_rlup_nm').size().reset_index(name='Transaction_Count')
 
 
 # Geographical Trends - City, Country
 city_trends = df.groupby('city_name').size().reset_index(name='Transaction_Count')
-
 country_trends = df.groupby('country_code').size().reset_index(name='Transaction_Count')
 
 
 # Trends - Cluster & Merchant
 cluster_trends = df.groupby('cluster_name_adjusted').size().reset_index(name='Transaction_Count')
-
 merchant_trends = df.groupby('merchant').size().reset_index(name='Transaction_Count')
+
+
+# Flag-Based Trends - CP, Domestic, Intraregion, Interregion
+cp_flag_trends = df.groupby('cp_flag').size().reset_index(name='Transaction_Count')
+domestic_flag_trends = df.groupby('domestic_flag').size().reset_index(name='Transaction_Count')
+intraregion_flag_trends = df.groupby('intraregion_flag').size().reset_index(name='Transaction_Count')
+interregion_flag_trends = df.groupby('interregion_flag').size().reset_index(name='Transaction_Count')
