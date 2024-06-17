@@ -29,3 +29,9 @@ daily_trends = df.groupby('cpd_dt').size().reset_index(name='Transaction_Count')
 category_trends_code = df.groupby('mrch_catg_cd').size().reset_index(name='Transaction_Count')
 
 category_trends_name = df.groupby('mrch_catg_rlup_nm').size().reset_index(name='Transaction_Count')
+
+
+# Geographical Trends - City, Country
+city_trends = df.groupby('city_name').size().reset_index(name='Transaction_Count')
+
+country_trends = df.groupby('country_code').size().reset_index(name='Transaction_Count')
