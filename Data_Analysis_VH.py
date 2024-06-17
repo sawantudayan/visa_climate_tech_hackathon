@@ -35,3 +35,9 @@ category_trends_name = df.groupby('mrch_catg_rlup_nm').size().reset_index(name='
 city_trends = df.groupby('city_name').size().reset_index(name='Transaction_Count')
 
 country_trends = df.groupby('country_code').size().reset_index(name='Transaction_Count')
+
+
+# Trends - Cluster & Merchant
+cluster_trends = df.groupby('cluster_name_adjusted').size().reset_index(name='Transaction_Count')
+
+merchant_trends = df.groupby('merchant').size().reset_index(name='Transaction_Count')
